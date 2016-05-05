@@ -1857,6 +1857,7 @@ function formBuilderEventsFn() {
      */
     var subTypeField = function subTypeField(values) {
       var subTypes = opts.messages.subtypes,
+          subTypesValues = opts.messages.subtypesvalues,
           type = values.type,
           subtype = values.subtype || '',
           subTypeField = '',
@@ -1867,7 +1868,7 @@ function formBuilderEventsFn() {
         subTypeField += '<select name="subtype" class="fld-subtype form-control" id="subtype-' + lastID + '">';
         subTypes[type].forEach(function (element) {
           selected = subtype === element ? 'selected' : '';
-          subTypeField += '<option value="' + element + '" ' + selected + '>' + element + '</option>';
+          subTypeField += '<option value="' + element + '" ' + selected + '>' + subTypesValues[element] + '</option>';
         });
         subTypeField += '</select>';
         subTypeField = '<div class="form-group subtype-wrap">' + subTypeLabel + ' ' + subTypeField + '</div>';
