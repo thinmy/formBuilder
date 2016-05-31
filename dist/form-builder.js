@@ -1204,6 +1204,7 @@ function formBuilderEventsFn() {
                 fieldVars: 'Field Variables',
                 fieldNonEditable: 'This field cannot be edited.',
                 fieldRemoveWarning: 'Are you sure you want to remove this field?',
+                noFieldToClear: 'There are no fields to clear',
                 fileUpload: 'File Upload',
                 formUpdated: 'Form Updated',
                 getStarted: 'Drag a field from the right to this area',
@@ -2344,7 +2345,7 @@ function formBuilderEventsFn() {
                     _helpers.save();
                 }, coords);
             } else {
-                _helpers.dialog('There are no fields to clear', {pageX: coords.pageX, pageY: coords.pageY});
+                _helpers.dialog(opts.messages.noFieldToClear, {pageX: coords.pageX, pageY: coords.pageY});
             }
         });
 
